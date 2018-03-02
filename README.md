@@ -5,7 +5,59 @@
   
   ## 模板文件说明：
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?><table>
+
+    <header>
+        <column index="1" name="姓名" value="{user.name}" type="fix" sort="1" width="20" height="10" fontSize="10" fontColor="#6495ED" />
+        <column index="2" name="工号" value="{user.code}" type="fix"  />
+        <column index="3" name="层级" value="{user.rank}" type="fix" display="false" />
+        <column index="4" name="单元" value="{unit.name}" type="fix"  />
+        
+        <column name="岗位奖金（60%）" >
+            <column index="6" name="岗位级别" type="manual" format="0.00"  />
+            <column index="7" name="岗位天数" type="manual" format="0.00"   />
+            <column index="8" name="跨科列" type="sql" format="0.00" sqlExp="SELECT id AS user_id, 1 AS value FROM plt_user WHERE id IN ({userIds})"  />
+            <column index="9" name="岗位系数" type="stat" format="0.00"  statExp="{KKA8}" />
+            <column index="10" name="岗位奖金" type="stat" format="0.0" statExp="{C9}*2"  />
+        </column>
+        <column index="15" name="总奖金" type="stat" format="0.0" statExp="{C9}*0.5+{C10}*0.5" tag="总奖金" />
+        <column index="16" name="总得分" type="stat" format="0.0" statExp="{C9}*0.5+{C10}*0.5" tag="总得分" />
+		
+    </header>
+
+    <statistics>
+        <statcolumn index="16" format="0.00" statExp="{moneySet}"   />
+    </statistics>
+
+</table>
+
+<table>
+
+    <header>
+        <column index="1" name="姓名" value="{user.name}" type="fix" sort="1" width="20" height="10" fontSize="10" fontColor="#6495ED" />
+        <column index="2" name="工号" value="{user.code}" type="fix"  />
+        <column index="3" name="层级" value="{user.rank}" type="fix" display="false" />
+        <column index="4" name="单元" value="{unit.name}" type="fix"  />
+        
+        <column name="岗位奖金（60%）" >
+            <column index="6" name="岗位级别" type="manual" format="0.00"  />
+            <column index="7" name="岗位天数" type="manual" format="0.00"   />
+            <column index="8" name="跨科列" type="sql" format="0.00" sqlExp="SELECT id AS user_id, 1 AS value FROM plt_user WHERE id IN ({userIds})"  />
+            <column index="9" name="岗位系数" type="stat" format="0.00"  statExp="{KKA8}" />
+            <column index="10" name="岗位奖金" type="stat" format="0.0" statExp="{C9}*2"  />
+        </column>
+        <column index="15" name="总奖金" type="stat" format="0.0" statExp="{C9}*0.5+{C10}*0.5" tag="总奖金" />
+        <column index="16" name="总得分" type="stat" format="0.0" statExp="{C9}*0.5+{C10}*0.5" tag="总得分" />
+		
+    </header>
+
+    <statistics>
+        <statcolumn index="16" format="0.00" statExp="{moneySet}"   />
+    </statistics>
+
+</table>
+
+
 <!-- column表示列表头，可以嵌套，表示表头合并
 注：以下必填只针对数据列，不包括合并表头，合并表头只有name必填
 
@@ -88,30 +140,6 @@ sqlExp中的占位符
 
 -->
 
-<table>
 
-    <header>
-        <column index="1" name="姓名" value="{user.name}" type="fix" sort="1" width="20" height="10" fontSize="10" fontColor="#6495ED" />
-        <column index="2" name="工号" value="{user.code}" type="fix"  />
-        <column index="3" name="层级" value="{user.rank}" type="fix" display="false" />
-        <column index="4" name="单元" value="{unit.name}" type="fix"  />
-        
-        <column name="岗位奖金（60%）" >
-            <column index="6" name="岗位级别" type="manual" format="0.00"  />
-            <column index="7" name="岗位天数" type="manual" format="0.00"   />
-            <column index="8" name="跨科列" type="sql" format="0.00" sqlExp="SELECT id AS user_id, 1 AS value FROM plt_user WHERE id IN ({userIds})"  />
-            <column index="9" name="岗位系数" type="stat" format="0.00"  statExp="{KKA8}" />
-            <column index="10" name="岗位奖金" type="stat" format="0.0" statExp="{C9}*2"  />
-        </column>
-        <column index="15" name="总奖金" type="stat" format="0.0" statExp="{C9}*0.5+{C10}*0.5" tag="总奖金" />
-        <column index="16" name="总得分" type="stat" format="0.0" statExp="{C9}*0.5+{C10}*0.5" tag="总得分" />
-		
-    </header>
-
-    <statistics>
-        <statcolumn index="16" format="0.00" statExp="{moneySet}"   />
-    </statistics>
-
-</table>
 
 ```
