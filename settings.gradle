@@ -1,0 +1,3 @@
+rootProject.name = 'stat-table'
+
+include 'stat-table'
