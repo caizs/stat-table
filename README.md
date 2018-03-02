@@ -93,7 +93,7 @@ sqlExp中的占位符
     <header>
         <column index="1" name="姓名" value="{user.name}" type="fix" sort="1" width="20" height="10" fontSize="10" fontColor="#6495ED" />
         <column index="2" name="工号" value="{user.code}" type="fix"  />
-		<column index="3" name="层级" value="{user.rank}" type="fix" display="false" />
+        <column index="3" name="层级" value="{user.rank}" type="fix" display="false" />
         <column index="4" name="单元" value="{unit.name}" type="fix"  />
         
         <column name="岗位奖金（60%）" >
