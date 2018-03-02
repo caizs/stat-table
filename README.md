@@ -97,9 +97,9 @@ sqlExp中的占位符
         <column index="4" name="单元" value="{unit.name}" type="fix"  />
         
         <column name="岗位奖金（60%）" >
-			<column index="6" name="岗位级别" type="manual" format="0.00"  />
+            <column index="6" name="岗位级别" type="manual" format="0.00"  />
             <column index="7" name="岗位天数" type="manual" format="0.00"   />
-		    <column index="8" name="跨科列" type="sql" format="0.00" sqlExp="SELECT id AS user_id, 1 AS value FROM plt_user WHERE id IN ({userIds})"  />
+            <column index="8" name="跨科列" type="sql" format="0.00" sqlExp="SELECT id AS user_id, 1 AS value FROM plt_user WHERE id IN ({userIds})"  />
             <column index="9" name="岗位系数" type="stat" format="0.00"  statExp="{KKA8}" />
             <column index="10" name="岗位奖金" type="stat" format="0.0" statExp="{C9}*2"  />
         </column>
